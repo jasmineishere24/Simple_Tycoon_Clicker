@@ -1,0 +1,118 @@
+:root{
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #ffd166;
+  --muted: #9aa4b2;
+  --glass: rgba(255,255,255,0.03);
+  --success: #66d19e;
+  --danger: #ff6b6b;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--font-sans);
+  background:linear-gradient(180deg,#061025 0%, #081426 100%);
+  color:#e6eef6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+#app{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:20px;
+  width:100%;
+  max-width:1100px;
+  align-items:start;
+}
+
+header{
+  grid-column:1 / 2;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:8px;
+}
+header h1{
+  margin:0;
+  font-size:20px;
+  letter-spacing:0.4px;
+}
+.meta{display:flex;gap:12px;align-items:center}
+.stat{background:var(--glass);padding:8px 12px;border-radius:8px;font-weight:600;color:var(--muted)}
+.stat strong{color:var(--accent)}
+
+.game-area{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-radius:12px;
+  padding:20px;
+  min-height:420px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+}
+
+.big-button{
+  background:linear-gradient(180deg,#132235,#0e1a2b);
+  border:1px solid rgba(255,255,255,0.04);
+  color:var(--accent);
+  padding:22px;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  cursor:pointer;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  transform:translateZ(0);
+}
+.big-button:active{transform:translateY(2px) scale(0.995)}
+.big-button svg{flex:0 0 40px}
+.big-label{font-size:18px;font-weight:700}
+.big-sub{font-size:14px;color:var(--muted)}
+
+.progress{width:100%;max-width:640px}
+.progress-bar{height:12px;background:rgba(255,255,255,0.03);border-radius:8px;overflow:hidden}
+#xp-bar{height:100%;background:linear-gradient(90deg,var(--accent),#ffb37a)}
+
+.shop{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-radius:12px;
+  padding:16px;
+  color:var(--muted);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  min-height:420px;
+}
+
+.shop h2{color:#d5e6ff;margin:0;font-size:16px}
+.upgrade{display:flex;justify-content:space-between;padding:10px;background:var(--card);border-radius:10px;align-items:center}
+.u-left{max-width:60%}
+.u-name{font-weight:700;color:#eaf6ff}
+.u-desc{font-size:13px;color:var(--muted);margin-top:4px}
+.u-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.u-cost{font-weight:700}
+.buy-button{background:var(--accent);border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+.buy-button:disabled{opacity:0.5;cursor:not-allowed}
+
+.small-button{
+  background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;color:var(--muted);cursor:pointer
+}
+.small-button:hover{border-color:rgba(255,255,255,0.08)}
+
+.footer-controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.prestige{display:flex;flex-direction:column;gap:8px}
+#prestige-button{background:linear-gradient(90deg,var(--success),#5dd8b8);border:none;padding:8px;border-radius:8px;color:#04302b;font-weight:700}
+
+@media (max-width:900px){
+  #app{grid-template-columns:1fr;max-width:680px}
+  .shop{order:2}
+  header{grid-column:1}
+}
