@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Tycoon Clicker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app">
+    <header>
+      <h1>Simple Tycoon Clicker</h1>
+      <div class="meta">
+        <div class="stat" id="coins-display">Coins: 0</div>
+        <div class="stat" id="cps-display">CPS: 0</div>
+      </div>
+    </header>
+
+    <section class="game-area">
+      <button id="click-button" class="big-button" aria-label="Click to earn coins">
+        <svg viewBox="0 0 24 24" width="40" height="40" aria-hidden="true">
+          <path d="M12 2a3 3 0 0 0-3 3v7H6.5a1.5 1.5 0 0 0 0 3H9v3a3 3 0 0 0 3 3h3a3 3 0 0 0 3-3v-4.5a1.5 1.5 0 0 0-1-1.4L12 2z" fill="currentColor"/>
+        </svg>
+        <div class="big-label">Tap</div>
+        <div class="big-sub" id="click-value">+1</div>
+      </button>
+
+      <div class="progress">
+        <div id="level-label">Level 1</div>
+        <div class="progress-bar">
+          <div id="xp-bar" style="width: 0%"></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="shop">
+      <h2>Upgrades</h2>
+      <div id="upgrades-list"></div>
+
+      <h2>Prestige</h2>
+      <div class="prestige">
+        <div id="prestige-info">Prestige points: 0</div>
+        <button id="prestige-button" class="small-button" disabled>Prestige (reset for +1%)</button>
+      </div>
+
+      <div class="footer-controls">
+        <button id="reset-button" class="small-button">Reset Game</button>
+        <button id="download-button" class="small-button">Export Save</button>
+        <button id="upload-button" class="small-button">Import Save</button>
+        <input id="file-input" type="file" accept="application/json" style="display:none">
+      </div>
+    </aside>
+  </main>
+
+  <template id="upgrade-item-template">
+    <div class="upgrade">
+      <div class="u-left">
+        <div class="u-name"></div>
+        <div class="u-desc"></div>
+      </div>
+      <div class="u-right">
+        <div class="u-cost"></div>
+        <button class="buy-button">Buy</button>
+      </div>
+    </div>
+  </template>
+
+  <script src="game.js" defer></script>
+</body>
+</html>
